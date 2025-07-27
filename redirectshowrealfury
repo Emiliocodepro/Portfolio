@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Redirection vers YouTube</title>
-  <meta http-equiv="refresh" content="1500;url=https://www.youtube.com/watch?v=EMls0lptLrw">
 </head>
 <body>
-  <p>Vous allez être redirigé vers YouTube dans quelques secondes...</p>
-  <p><a href="https://www.youtube.com/watch?v=EMls0lptLrw">Cliquez ici si la redirection ne fonctionne pas</a></p>
+  <p>Redirection automatique vers YouTube dans 7 secondes...</p>
+  <p><a href="https://www.youtube.com/watch?v=EMls0lptLrw">Cliquez ici si rien ne se passe</a></p>
+
+  <script>
+    setTimeout(function () {
+      window.location.href = "https://www.youtube.com/watch?v=EMls0lptLrw";
+    }, 7000); // délai en millisecondes (7000 ms = 7 s)
+  </script>
 </body>
 </html>
