@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Show Real Fury</title>
   <style>
+    @font-face {
+      font-family: 'DrukWideBold';
+      src: url('./fonts/druk-wide-bold/DrukWideBold.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
     body {
       background-color: #000000;
       color: #ffffff;
@@ -25,9 +31,13 @@
     }
 
     h1 {
+      font-family: 'DrukWideBold', Arial, sans-serif;
+      font-weight: normal;
       font-size: 2.5em;
       margin-bottom: 30px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      letter-spacing: 2px;
+      text-align: left;
     }
 
     .video-wrapper {
@@ -50,15 +60,15 @@
 
     .credits {
       font-size: 1.1em;
-      line-height: 1.6;
-      text-align: center;
+      line-height: 1.2;
+      text-align: left;
       max-width: 600px;
-      margin: 0 auto;
+      margin: 0;
       opacity: 0.9;
     }
 
     .credits p {
-      margin: 10px 0;
+      margin: 5px 0;
     }
 
     @media (max-width: 768px) {
