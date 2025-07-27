@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Redirection vers YouTube</title>
-  <meta http-equiv="refresh" content="5;url=https://www.youtube.com/watch?v=EMls0lptLrw">
+  <meta http-equiv="refresh" content="150;url=https://www.youtube.com/watch?v=EMls0lptLrw">
 </head>
 <body>
   <p>Vous allez être redirigé vers YouTube dans quelques secondes...</p>
