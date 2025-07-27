@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interviews Hunt</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+    body {
+      background-image: url('bgvideos/bgvideohunt.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #F9DBB3;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      justify-content: center;
+    }
+
+    .video-container {
+      text-align: center;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Arial, sans-serif;
+      font-weight: bold;
+      font-size: 4em;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      margin-bottom: 30px;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .action-button {
+      background-color: #1b2731;
+      color: #ffffff;
+      font-family: 'now', Arial, sans-serif;
+      font-weight: normal;
+      font-size: 1em;
+      padding: 12px 20px;
+      border: 2px solid #ffffff;
+      border-radius: 25px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .action-button:hover {
+      background-color: #131c24;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+      
+      h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+      
+      .video-container {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="video-container">
+    <h1>Trailer Hunt</h1>
+    
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/Bj4UZVQnlzE?si=qXl1e8WGvsQli6ku"
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</body>
+</html>
