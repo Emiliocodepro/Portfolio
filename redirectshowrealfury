@@ -11,7 +11,7 @@
   <script>
     setTimeout(function () {
       window.location.href = "https://www.youtube.com/watch?v=EMls0lptLrw";
-    }, 7000); // délai en millisecondes (7000 ms = 7 s)
+    }, 70000); // délai en millisecondes (7000 ms = 7 s)
   </script>
 </body>
 </html>
