@@ -20,7 +20,7 @@
       color: #ffffff;
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -30,18 +30,17 @@
 
     .video-container {
       text-align: center;
-      max-width: 800px;
+      max-width: 900px;
       width: 100%;
     }
 
     h1 {
       font-family: 'DrukWideBold', Arial, sans-serif;
       font-weight: normal;
-      font-size: 2.5em;
-      margin-bottom: 30px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      font-size: 4em;
+      margin-bottom: 0px;
       letter-spacing: 2px;
-      text-align: left;
+      text-align: center;
     }
 
     .video-wrapper {
@@ -62,26 +61,6 @@
       border-radius: 8px;
     }
 
-    .credits-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      width: 100%;
-      margin: 0;
-    }
-
-    .credits {
-      font-size: 0.8em;
-      line-height: 1.2;
-      text-align: left;
-      flex: 1;
-      opacity: 0.9;
-    }
-
-    .credits p {
-      margin: 5px 0;
-    }
-
     .action-button {
       background-color: #ff0000;
       color: #ffffff;
@@ -95,7 +74,6 @@
       text-decoration: none;
       display: inline-block;
       transition: background-color 0.3s ease;
-      margin-left: 20px;
     }
 
     .action-button:hover {
@@ -108,23 +86,12 @@
       }
       
       h1 {
-        font-size: 1em;
+        font-size: 2em;
         margin-bottom: 20px;
       }
       
-      .credits {
-        font-size: 1em;
-      }
-
-      .credits-container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .action-button {
-        margin-left: 0;
-        margin-top: 15px;
-        align-self: flex-end;
+      .video-container {
+        max-width: 100%;
       }
     }
   </style>
@@ -144,13 +111,8 @@
       </iframe>
     </div>
 
-    <div class="credits-container">
-      <div class="credits">
-        <p><strong>CREDITS:</strong></p>
-        <p>3D: Budog Juan-Conreux</p>
-        <p>Edit : Nathan Monbrun - Emile Defever</p>
-      </div>
-      <a href="#" class="action-button">HOME</a>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://emiledefever.com" class="action-button">HOME</a>
     </div>
   </div>
 </body>
