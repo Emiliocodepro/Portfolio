@@ -12,7 +12,11 @@
       font-style: normal;
     }
     body {
-      background-color: #000000;
+      background-image: url('../bgvideos/bgvideofury.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #ffffff;
       font-family: Arial, sans-serif;
       margin: 0;
@@ -58,17 +62,44 @@
       border-radius: 8px;
     }
 
+    .credits-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      margin: 0;
+    }
+
     .credits {
-      font-size: 1.1em;
+      font-size: 0.8em;
       line-height: 1.2;
       text-align: left;
-      max-width: 600px;
-      margin: 0;
+      flex: 1;
       opacity: 0.9;
     }
 
     .credits p {
       margin: 5px 0;
+    }
+
+    .action-button {
+      background-color: #ff0000;
+      color: #ffffff;
+      font-family: 'DrukWideBold', Arial, sans-serif;
+      font-weight: normal;
+      font-size: 1em;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+      margin-left: 20px;
+    }
+
+    .action-button:hover {
+      background-color: #cc0000;
     }
 
     @media (max-width: 768px) {
@@ -77,19 +108,30 @@
       }
       
       h1 {
-        font-size: 2em;
+        font-size: 1em;
         margin-bottom: 20px;
       }
       
       .credits {
         font-size: 1em;
       }
+
+      .credits-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .action-button {
+        margin-left: 0;
+        margin-top: 15px;
+        align-self: flex-end;
+      }
     }
   </style>
 </head>
 <body>
   <div class="video-container">
-    <h1>Show Real Fury</h1>
+    <h1>SHOW REAL FURY</h1>
     
     <div class="video-wrapper">
       <iframe 
@@ -102,12 +144,13 @@
       </iframe>
     </div>
 
-    <div class="credits">
-      <p><strong>Crédits du projet :</strong></p>
-      <p>Réalisation et production : [Nom des membres de l'équipe]</p>
-      <p>Montage : [Nom du monteur]</p>
-      <p>Musique : [Nom du compositeur/artiste]</p>
-      <p>Merci à tous les participants qui ont rendu ce projet possible.</p>
+    <div class="credits-container">
+      <div class="credits">
+        <p><strong>CREDITS:</strong></p>
+        <p>3D: Budog Juan-Conreux</p>
+        <p>Edit : Nathan Monbrun - Emile Defever</p>
+      </div>
+      <a href="#" class="action-button">HOME</a>
     </div>
   </div>
 </body>
