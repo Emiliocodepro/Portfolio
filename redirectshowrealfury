@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirection vers YouTube</title>
+  <meta http-equiv="refresh" content="5;url=https://www.youtube.com/watch?v=EMls0lptLrw">
+</head>
+<body>
+  <p>Vous allez être redirigé vers YouTube dans quelques secondes...</p>
+  <p><a href="https://www.youtube.com/watch?v=EMls0lptLrw">Cliquez ici si la redirection ne fonctionne pas</a></p>
+</body>
+</html>
