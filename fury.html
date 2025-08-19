@@ -32,70 +32,10 @@
     </iframe>
   </div>
 
-  <!-- Script analytics Firebase -->
-  <script>
-    // 1) Config Firebase (même projet que l’index)
-    const firebaseConfig = {
-      apiKey: "AIzaSyBD-K2F6uv_TOpRSxiRgWjVDvJ_PLSYKOQ",
-      authDomain: "portfolio-4b510.firebaseapp.com",
-      projectId: "portfolio-4b510",
-      storageBucket: "portfolio-4b510.firebasestorage.app",
-      messagingSenderId: "723553154253",
-      appId: "1:723553154253:web:60b76cd8c2f13c617ae584",
-      measurementId: "G-639Q6CLY3G"
-    };
-
-    // 2) Init (avec garde-fou si d’autres scripts init Firebase)
-    if (!firebase.apps.length) {
-      firebase.initializeApp(firebaseConfig);
-    }
-    const db = firebase.firestore();
-
-    // 3) Infos session / page
-    const sessionId = (crypto.randomUUID && crypto.randomUUID()) || Math.random().toString(36).substring(2, 12);
-    const page = location.pathname || "/fury.html";
-    const siteId = "fury";                 // <- tag pratique pour filtrer par “site”
-    const referrer = document.referrer || null;
-
-    // 4) Mesure du temps visible
-    let visibleSince = document.visibilityState === 'visible' ? performance.now() : 0;
-    let activeMs = 0;
-
-    async function flush(eventType){
-      if (visibleSince) {
-        activeMs += performance.now() - visibleSince;
-        visibleSince = 0;
-      }
-      try {
-        await db.collection("pageAnalytics").add({
-          siteId,                // permet de filtrer Fury vs index
-          sessionId,
-          page,
-          event: eventType,      // "load" | "hidden" | "unload"
-          activeMs: Math.round(activeMs),
-          ts: new Date().toISOString(),
-          referrer
-        });
-      } catch (e) {
-        console.error("Erreur Firestore:", e);
-      }
-    }
-
-    document.addEventListener("visibilitychange", () => {
-      if (document.visibilityState === 'hidden') {
-        flush("hidden");
-      } else {
-        visibleSince = performance.now();
-      }
-    });
-
-    window.addEventListener("beforeunload", () => flush("unload"));
-
-    // 5) Enregistrer l’entrée
-    flush("load");
-  </script>
-
   <!-- Ton JS habituel -->
   <script src="script.js"></script>
+
+  <!-- Script analytics mutualisé -->
+  <script src="analytics.js" data-site="fury"></script>
 </body>
 </html>

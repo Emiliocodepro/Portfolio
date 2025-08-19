@@ -7,11 +7,12 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-
+  <!-- Librairies Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 </head>
 <body>
+  <!-- Overlay mobile -->
   <div id="mobile-overlay" class="mobile-overlay">
     <div class="overlay-content">
       <div class="overlay-icon">📱</div>
@@ -20,6 +21,7 @@
     </div>
   </div>
 
+  <!-- Contenu principal -->
   <div class="iframe-container">
     <iframe 
       src="https://merry-ijtegdrzp.peachworlds.com/" 
@@ -31,63 +33,11 @@
     ></iframe>
   </div>
 
-  <!-- Script analytics Firebase -->
-  <script>
-    // 🔹 1. Config Firebase (ta vraie config)
-    const firebaseConfig = {
-      apiKey: "AIzaSyBD-K2F6uv_TOpRSxiRgWjVDvJ_PLSYKOQ",
-      authDomain: "portfolio-4b510.firebaseapp.com",
-      projectId: "portfolio-4b510",
-      storageBucket: "portfolio-4b510.firebasestorage.app",
-      messagingSenderId: "723553154253",
-      appId: "1:723553154253:web:60b76cd8c2f13c617ae584",
-      measurementId: "G-639Q6CLY3G"
-    };
-
-    // 🔹 2. Initialisation Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-
-    // 🔹 3. Identifiant de session anonyme (nouveau à chaque onglet)
-    const sessionId = (crypto.randomUUID && crypto.randomUUID()) || Math.random().toString(36).substring(2, 12);
-    const page = location.pathname;
-
-    let visibleSince = document.visibilityState === 'visible' ? performance.now() : 0;
-    let activeMs = 0;
-
-    // 🔹 4. Fonction d’envoi vers Firestore
-    function flush(eventType){
-      if (visibleSince) {
-        activeMs += performance.now() - visibleSince;
-        visibleSince = 0;
-      }
-      db.collection("pageAnalytics").add({
-        sessionId: sessionId,
-        page: page,
-        event: eventType,
-        activeMs: Math.round(activeMs),
-        ts: new Date().toISOString(),
-        referrer: document.referrer || null
-      }).catch(err => console.error("Erreur Firestore:", err));
-    }
-
-    // 🔹 5. Gestion de la visibilité onglet
-    document.addEventListener("visibilitychange", () => {
-      if (document.visibilityState === 'hidden') {
-        flush("hidden");
-      } else {
-        visibleSince = performance.now();
-      }
-    });
-
-    // 🔹 6. Fermeture onglet
-    window.addEventListener("beforeunload", () => flush("unload"));
-
-    // 🔹 7. Enregistrer l’entrée
-    flush("load");
-  </script>
-
-  <!-- Ton JS habituel -->
+  <!-- Ton script habituel -->
   <script src="script.js"></script>
+
+  <!-- Script analytics (externe) -->
+  <script src="analytics.js"></script>
 </body>
 </html>
+
